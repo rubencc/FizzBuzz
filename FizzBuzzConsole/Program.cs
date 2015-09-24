@@ -15,6 +15,9 @@ namespace FizzBuzzConsole
             Console.WriteLine(numbers);
             Console.ReadKey();
 
+            Console.WriteLine(String.Empty);
+            
+            Console.ReadKey();
         }
 
         private static string BuildNumbers()
