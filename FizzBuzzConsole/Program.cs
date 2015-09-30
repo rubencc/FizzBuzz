@@ -17,9 +17,29 @@ namespace FizzBuzzConsole
 
             Console.WriteLine(String.Empty);
 
-            //Hacer fizzbuz
+            numbers.Split(' ').ToList()
+                .ForEach(item => Console.Write(FizzBuzz(item.ToString())));
 
             Console.ReadKey();
+        }
+
+        private static string FizzBuzz(string number)
+        {
+            int num = int.Parse(number);
+
+            string output = String.Empty;
+
+            if (num % 3 == 0)
+            {
+                output += "Fizz";
+            }
+
+            if (num % 5 == 0)
+            {
+                output += "Buzz";
+            }
+
+            return string.Format(" {0}", String.IsNullOrWhiteSpace(output) ? number : output);
         }
 
         private static string BuildNumbers()

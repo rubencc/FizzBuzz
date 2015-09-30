@@ -21,8 +21,14 @@ namespace FizzBuzzLinq
             Console.ReadKey();
 
             Console.WriteLine(String.Empty);
+            Console.WriteLine(String.Empty);
 
-            //Funcion que use Linq
+            var result = integers.Select(item =>
+                (item % 3 == 0) & (item % 5 == 0) ? "FizzBuzz"
+                : (item % 3 == 0) ? "Fizz"
+                : (item % 5 == 0) ? "Buzz" : item.ToString());
+
+            result.ToList().ForEach(item => Console.Write(string.Format(" {0}", item)));
             
 
             Console.ReadKey();
